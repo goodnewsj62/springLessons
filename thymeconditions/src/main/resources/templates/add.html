@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+</head>
+
+<body>
+    <h1>Workbook2.1</h1>
+    <br>
+    <br>
+    <h4>Speed addition</h4>
+    <p th:text="${speed} +  ${speed}"></p>
+    <br>
+    <br>
+    <h4>Concatenating</h4>
+    <p th:text="${'your speed is ' +  '45'}"></p>
+    <br>
+    <br>
+    <h4>Speed Warning</h4>
+    <p th:if="${speed > 100}" style="color:red;"> Please Slow down a lil</p>
+    <p th:unless="${speed > 100}" style="color:green;"> Your Speed is okay</p>
+</body>
+
+</html>
