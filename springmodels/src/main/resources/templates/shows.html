@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades</title>
+</head>
+
+<body>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Episode</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:object="${first}">
+                    <td th:text="*{title}">
+
+                    </td>
+                    <td th:text="*{episode}">
+
+                    </td>
+                    <td th:text="*{rating}">
+
+                    </td>
+                </tr>
+                <tr th:object="${second}">
+                    <td th:text="*{title}">
+
+                    </td>
+                    <td th:text="*{episode}">
+
+                    </td>
+                    <td th:text="*{rating}">
+
+                    </td>
+                </tr>
+                <tr th:object="${third}">
+                    <td th:text="*{title}">
+
+                    </td>
+                    <td th:text="*{episode}">
+
+                    </td>
+                    <td th:text="*{rating}">
+
+                    </td>
+                </tr>
+                <tr th:object="${fourth}">
+                    <td th:text="*{title}">
+
+                    </td>
+                    <td th:text="*{episode}">
+
+                    </td>
+                    <td th:text="*{rating}">
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</body>
+
+</html>
