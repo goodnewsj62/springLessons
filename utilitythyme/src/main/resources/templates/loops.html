@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roles</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="role: ${roles}">
+                <td th:text="${role.name}"></td>
+                <td th:text="${role.age}"></td>
+                <td th:text="${role.role}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

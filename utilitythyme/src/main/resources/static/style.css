@@ -1,0 +1,15 @@
+.btns{
+    width: 300px;
+}
+
+.btns button{
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-weight: "bold";
+    background-color: #1e90ff;
+    color: #fff;
+}
+
+.btns button:last-child{
+    background-color: black;
+}
