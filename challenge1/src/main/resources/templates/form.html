@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge</title>
+    <link rel="stylesheet" th:href="@{styles.css}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a th:href="@{/}">
+                    form
+                </a>
+                <a th:href="@{/inventory}">
+                    inventory
+                </a>
+            </nav>
+        </header>
+        <main>
+            <form method="POST" th:action="@{/submitItem}" th:object="${item}">
+                <select name="" id="" th:field="*{category}">
+                    <option style="color:blue" value="">Choose Category</option>
+                    <option th:each="category:${categories}" th:value="${category}" th:text="${category}">
+                    </option>
+                </select>
+                <input type="hidden" name="id" th:field="*{id}">
+                <div class="tab">
+                    <label for="name">Name</label>
+                    <input th:field="*{name}" type="text" name="name" id="name">
+                </div>
+                <div class="tab">
+                    <label for="price">Price</label>
+                    <input th:field="*{price}" type="number" name="price" id="price">
+                </div>
+                <div class="tab">
+                    <label for="discount">Discount</label>
+                    <input th:field="*{discount}" type="number" name="discount" id="discount">
+                </div>
+                <div class="tab">
+                    <label for="date">Date</label>
+                    <input th:field="*{date}" type="date" name="" id="date">
+                </div>
+                <div class="tab">
+                    <input type="submit" value="submit">
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>

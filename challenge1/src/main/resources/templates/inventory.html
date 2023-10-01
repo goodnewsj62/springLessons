@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" th:href="@{styles.css}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a th:href="@{/}">
+                    form
+                </a>
+                <a th:href="@{/inventory}">
+                    inventory
+                </a>
+            </nav>
+        </header>
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Category</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Discount</th>
+                        <th>Order Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item:${items}">
+                        <td th:text="${#strings.substring(item.id, 0 ,4)}"></td>
+                        <td th:text="${item.category}"></td>
+                        <td th:text="${item.name}"></td>
+                        <td th:text="${#numbers.formatCurrency(item.price)}"></td>
+                        <td th:text="${#numbers.formatCurrency(item.discount)}"></td>
+                        <td type="date" th:text="${#dates.format(item.date, 'yyyy-MM-dd')}"></td>
+                        <td>
+                            <a role="button" class="table-button" th:href="@{/(id=${item.id})}">
+                                Update
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+
+</html>
